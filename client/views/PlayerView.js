@@ -13,6 +13,10 @@ var PlayerView = Backbone.View.extend({
     this.render();
   },
 
+  songEnded: function(){
+    // Listen for 'ended' https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Media_events
+  },
+
   render: function(){
     return this.$el.attr('src', this.model ? this.model.get('url') : '');
   }
