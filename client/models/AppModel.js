@@ -25,6 +25,8 @@ var AppModel = Backbone.Model.extend({
 
     }, this);
 
+    //.on('incrementPlaycount')
+
 
    this.get('songQueue').on('dequeue', function(song){
       this.get('songQueue').remove(song, {at: 0});

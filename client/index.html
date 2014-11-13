@@ -20,7 +20,7 @@
             <div class="player">
 
 
-            </div> 
+            </div>
           </div> <!-- .playerContainer -->
           <footer>
 
@@ -48,37 +48,19 @@
     <script src="views/LibraryEntryView.js"></script>
     <script src="views/AppView.js"></script>
 
-    <script>
-      $(function(){
-        // set up model objects
-        var library = new Songs(songData);
-        var app = new AppModel({library: library});
-
-        // build a view for the top level of the whole app
-        var appView = new AppView({model: app});
-
-        // put the view onto the screen
-        $('.player').append(appView.render());
-      });
-    </script>
-
-
-    <!-- BEGIN: Underscore Template Definitions. -->
-
-    <!-- Player Template -->
     <script type="text/template" class="player-template">
 
-        
+
             <div class="playerface">
                 <%= playerface %>
             </div>
             <div class="songList library">
                 <%= songLibrary %>
-            </div> 
+            </div>
             <div class="songlist queue">
                 <%= songQueue %>
             </div>
-        
+
 
     </script>
     <!-- end: Underscore Template Definition. -->

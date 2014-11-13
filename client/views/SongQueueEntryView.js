@@ -1,24 +1,30 @@
 // SongQueueEntryView.js - Defines a backbone view class for the song queue entries.
 var SongQueueEntryView = Backbone.View.extend({
-  tagName: 'ul',
+  tagName: 'li.entry',
 
-  template: _.template('<li>(<%= artist %>)<%= title %><span> ---Add to Queue</span></li>'),
+  template: _.template('(<%= artist %>)<%= title %> <%= playcount%><span> ---Add to Queue</span>'),
 
 
   initialize: function(){
+    this.model.on('change:playcount', function(){
+      console.log('queue increment');
+      this.render();
+    }, this);
+
   },
 
 
   events: {
     'click': function() {
       this.model.dequeue();
-      console.log(this);
+      this.render();
     },
     'ended' : function(){
-      console.log(this.model);
       this.model.play();
     }
   },
+
+
 
 
 
