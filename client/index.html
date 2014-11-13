@@ -3,6 +3,24 @@
 
     <head>
 
+    <script type="text/template" class="template-list-item">
+
+      <span class="artist">
+        <%= artist %>
+      </span>
+      <span class="title">
+        <%= title %>
+      </span>
+      <span class="playcount">
+        <%= playcount %>
+      </span>
+      <span> ---Add to Queue</span>
+
+
+    </script>
+
+
+
         <script src="bower_components/jquery/jquery.min.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
@@ -13,11 +31,22 @@
 
   <body>
       <div id="wrapper">
-          <header class="pageHeader">
+          <header class="page-header">
               <h1> myTunes </h1>
           </header>
-          <div class="playerContainter">
+          <div class="player-container">
             <div class="player">
+
+              <div class="player-screen">
+                <div class="player-screen-inner">
+                    <div class="marquee">
+
+                    </div>
+                </div>
+                <div class="player-screen-inner-overlay">
+
+                </div>
+              </div>
 
 
             </div>
@@ -48,22 +77,6 @@
     <script src="views/LibraryEntryView.js"></script>
     <script src="views/AppView.js"></script>
 
-    <script type="text/template" class="player-template">
-
-
-            <div class="playerface">
-                <%= playerface %>
-            </div>
-            <div class="songList library">
-                <%= songLibrary %>
-            </div>
-            <div class="songlist queue">
-                <%= songQueue %>
-            </div>
-
-
-    </script>
-    <!-- end: Underscore Template Definition. -->
 
   </body>
 </html>

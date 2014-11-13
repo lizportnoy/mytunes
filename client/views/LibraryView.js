@@ -3,7 +3,6 @@ var LibraryView = Backbone.View.extend({
 
   tagName: "ul",
 
-  template: '',
 
   initialize: function() {
     this.render();

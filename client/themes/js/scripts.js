@@ -12,9 +12,30 @@
         $('.player').append(appView.render());
       });
 
+//Options
+//
+
+var playerScrollSpeed = 4000;
+
+
 
 $('document').ready(function(){
 
-$('ul li').append('<span>play</span>');
+setInterval(playerScroll, playerScrollSpeed);
+
+function playerScroll(speed){
+
+  var width = $('.player-screen-inner').innerWidth();
+
+  $('.player-screen-inner .marquee').animate({
+    left: (width*2)*(-1)
+  }, playerScrollSpeed, function(){
+    //animation complete
+    $(this).css('left', '100%');
+
+  });
+
+}
+
 
 });
