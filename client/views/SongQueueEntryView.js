@@ -9,7 +9,7 @@ var SongQueueEntryView = Backbone.View.extend({
 
   },
 
-  tagName: 'li.entry',
+  tagName: 'li',
 
   template: _.template($('.template-list-item').html()),
 

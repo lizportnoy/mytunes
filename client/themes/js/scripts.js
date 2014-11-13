@@ -23,6 +23,12 @@ $('document').ready(function(){
 
 setInterval(playerScroll, playerScrollSpeed);
 
+  
+$('.library-list').on('click', function(){
+  $('.queue').slideDown();
+});
+
+
 function playerScroll(speed){
 
   var width = $('.player-screen-inner').innerWidth();
