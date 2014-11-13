@@ -15,16 +15,24 @@ var AppView = Backbone.View.extend({
 
   },
 
-  template: _.template('<div id="player"><div class="playerface"><%= playerface %></div><div class="songList library"><%= songLibrary %></div> <div class="songlist queue"><%= songQueue %></div></div>');
-
   render: function(){
-    var wholeView = {
-      playerface : this.playerView.$el,
-      songLibrary : this.libraryView.$el,
-      songQueue = this.songQueueView.$el
-    };
+    // var wholeView = {
+    //   playerface :  this.playerView.$el.html(),
+    //   songLibrary : this.libraryView.$el.html(),
+    //   songQueue :   this.songQueueView.$el.html()
+    // };
 
-    return this.$el.html(this.template(wholeView));
+    //     var template = _.template($('.player-template').html(), wholeView);
+    //     return this.$el.html(template);
+
+ return this.$el.html([
+       this.playerView.$el,
+       this.libraryView.$el,     
+       this.songQueueView.$el
+     ]);
+
+
+
   }
 
 });

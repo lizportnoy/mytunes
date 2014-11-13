@@ -2,31 +2,36 @@
 <html>
 
     <head>
+
+        <script src="bower_components/jquery/jquery.min.js"></script>
+        <script src="bower_components/underscore/underscore.js"></script>
+        <script src="bower_components/backbone/backbone.js"></script>
         <script src="themes/js/scripts.js"></script>
-        <script src="themes/css/styles.css"></script>
+        <link rel='stylesheet' type="text/css" href="themes/css/styles.css">
     </head>
 
 
   <body>
-  <div id="wrapper">
-      <header class="pageHeader">
-          <h1> myTunes </h1>
-      </header>
-      <div class="playerContainter">
+      <div id="wrapper">
+          <header class="pageHeader">
+              <h1> myTunes </h1>
+          </header>
+          <div class="playerContainter">
+            <div class="player">
 
-      </div> <!-- .playerContainer -->
-      <footer>
 
-      </footer>
-  </div>
+            </div> 
+          </div> <!-- .playerContainer -->
+          <footer>
+
+          </footer>
+      </div>
 
 
 
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
      below them until after the scripts load-->
-    <script src="bower_components/jquery/jquery.min.js"></script>
-    <script src="bower_components/underscore/underscore.js"></script>
-    <script src="bower_components/backbone/backbone.js"></script>
+
 
     <script src="data/data.js"></script>
 
@@ -53,8 +58,30 @@
         var appView = new AppView({model: app});
 
         // put the view onto the screen
-        $('body').append(appView.render());
+        $('.player').append(appView.render());
       });
     </script>
+
+
+    <!-- BEGIN: Underscore Template Definitions. -->
+
+    <!-- Player Template -->
+    <script type="text/template" class="player-template">
+
+        
+            <div class="playerface">
+                <%= playerface %>
+            </div>
+            <div class="songList library">
+                <%= songLibrary %>
+            </div> 
+            <div class="songlist queue">
+                <%= songQueue %>
+            </div>
+        
+
+    </script>
+    <!-- end: Underscore Template Definition. -->
+
   </body>
 </html>
