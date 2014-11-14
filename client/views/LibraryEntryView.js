@@ -10,7 +10,7 @@ var LibraryEntryView = Backbone.View.extend({
     }, this);
   },
 
-  tagName: 'li',
+  tagName: 'li class="clearfix"',
 
   template: _.template($('.template-list-item').html()),
 

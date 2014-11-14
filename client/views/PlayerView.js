@@ -16,21 +16,16 @@ var PlayerView = Backbone.View.extend({
     this.render();
 
     $('.marquee').empty().append('<span class="artist">'+song.attributes.artist+'</span><span class="song-title">'+song.attributes.title+'</span');
-    console.log(song);
+
   },
 
   events: {
     'ended': function() {
       this.model.incrementPlaycount();
-      //this.model.dequeue();
+      this.model.dequeue();
     }
   },
 
-  songEnded: function(){
-    // Listen for 'ended' https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Media_events
-
-
-  },
 
   render: function(){
     return this.$el.attr('src', this.model ? this.model.get('url') : '');
