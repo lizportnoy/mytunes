@@ -17,31 +17,66 @@
 
 
 
+
 //Options
 var playerScrollSpeed = 4000;
 
 //On Page Ready
 $('document').ready(function(){
 
+  $('.toggle-library').on('click', toggleLibrary);
+
   setInterval(playerScroll, playerScrollSpeed);
 
 
+  $('.toggle-queue').on('click', toggleQueue);
   $('.library-list').on('click', function(){
-    $('.queue').slideDown();
+    if(!$('.library-list').hasClass('queued')){
+      toggleQueue();
+      $('.library-list').addClass('queued');
+    }
   });
 
 
   //Radio Marquee
   function playerScroll(speed){
-
     $('.player-screen-inner .marquee').animate({
-      left: "-100%"
-    }, playerScrollSpeed, function(){
+      left: "-1000px"
+    }, playerScrollSpeed, "linear", function(){
       //animation complete
       $(this).css('left', '100%');
 
     });
   };
+
+  // display library
+
+ function toggleLibrary() {
+
+    if($('.library-sidebar').hasClass("active")) {
+      $('.library-sidebar').animate({
+        left: "2px"
+      },750,function () {
+        //animation complete
+      }).removeClass("active");
+    } else {
+      $('.library-sidebar').animate({
+        left: "-198px"
+      },750, function (){
+        //animation complete
+      }).addClass("active");
+    }
+  }
+
+
+function toggleQueue(){
+      if($('.queue').hasClass('active')) {
+      $('.queue').slideUp().removeClass('active');
+    } else {
+      $('.queue').slideDown().addClass('active');
+    }
+}
+
 
 
 }); //doc.ready
